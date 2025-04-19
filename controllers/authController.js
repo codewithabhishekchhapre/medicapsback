@@ -30,8 +30,6 @@ exports.signup = async (req, res) => {
      }
 }    
 
-
-
 exports.login = async (req, res) => {
      try {
        const { email, password } = req.body;
@@ -55,8 +53,6 @@ exports.login = async (req, res) => {
      }
    };
 
-
-   // Get all users
 exports.getAllUsers = async (req, res) => {
      try {
        const users = await User.find(); // You can add filters if needed
@@ -72,6 +68,10 @@ exports.getAllUsers = async (req, res) => {
    function generateOTP() {
     return Math.floor(100000 + Math.random() * 900000).toString(); // 6-digit
   }
+
+
+  // this is a send otp code
+
    exports.sendOtp=async(req,res)=>{
 
       const {email,purpose}=req.body;
