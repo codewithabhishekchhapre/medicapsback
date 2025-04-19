@@ -9,4 +9,7 @@ router.get('/users', authController.getAllUsers);
 router.post("/sendotp",authController.sendOtp)
 
 
+// hello this is a route section 
+
+
 module.exports = router;
