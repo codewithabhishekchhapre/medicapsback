@@ -7,6 +7,7 @@ var connectDB = require('./models/dbconfig');
 
 var indexRouter = require('./routes/index');
 const authRoutes = require('./routes/authRoutes');
+const courseRoutes=require("./routes/courseRoutes")
 
 var app = express();
 
@@ -22,6 +23,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/api', authRoutes);
+app.use("/api/course",courseRoutes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
